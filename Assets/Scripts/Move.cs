@@ -11,7 +11,6 @@ public class Move : MonoBehaviour
 
     Rigidbody rb;
 
-    bool levelComplete, levelFail;
 
     // Start is called before the first frame update
     void Start()
