@@ -11,15 +11,13 @@ public class Move : MonoBehaviour
 
     Rigidbody rb;
 
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -32,18 +30,13 @@ public class Move : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * -(jumpForce+2), ForceMode.Impulse);
+            rb.AddForce(Vector3.up * -(jumpForce), ForceMode.Impulse);
         }
 
-
-    }
-
-    private void FixedUpdate()
-    {
         rb.velocity = new Vector3(moveForce, rb.velocity.y, 0);
     }
 
