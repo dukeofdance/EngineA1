@@ -19,14 +19,6 @@ public class Move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(Vector3.right * moveForce, ForceMode.Force);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(Vector3.left * moveForce, ForceMode.Force);
-        }
 
         if (Input.GetKey(KeyCode.Space))
         {
